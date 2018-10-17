@@ -2,13 +2,36 @@ import re
 import unittest
 
 def sumNums(fileName):
-    pass
+    f = open(fileName, 'r')
+    file = f.readlines()
+    file.close
+
+    sum = 0
+
+    one = re.findall(r'1', file)
+    two = re.findall(r'2', file)
+    three = re.findall(r'3', file)
+    four = re.findall(r'4', file)
+    five = re.findall(r'5', file)
+    six = re.findall(r'6', file)
+    seven = re.findall(r'7', file)
+    eight = re.findall(r'8', file)
+    nine = re.findall(r'9', file)
+
+
 
 def countWord(fileName, word):
-    pass
+    
+    count = 0
+
+    while fileName:
+        if word.upper() in fileName.upper():
+            if 
+
 
 def listURLs(fileName):
     pass
+
 
 
 class TestHW6(unittest.TestCase):
