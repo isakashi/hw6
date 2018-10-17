@@ -22,11 +22,13 @@ def sumNums(fileName):
 
 def countWord(fileName, word):
     
+    fileWords = filName.split()
+
     count = 0
 
-    while fileName:
-        if word.upper() in fileName.upper():
-            if 
+    for x in filewords:
+        if x.upper() == word.upper():
+            count += 1
 
 
 def listURLs(fileName):
