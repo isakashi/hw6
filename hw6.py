@@ -54,7 +54,7 @@ def listURLs(fileName):
 
     while line:
 
-        link = re.findall(r"www.[a-z0-9]+.[a-z].[a-z0-9]+.", line)
+        link = re.findall(r"\bwww.[a-z0-9]+.[a-z].[a-z0-9]+.\b", line)
 
         linkList += link
 
