@@ -2,38 +2,69 @@ import re
 import unittest
 
 def sumNums(fileName):
+    
     f = open(fileName, 'r')
-    file = f.readlines()
-    file.close
+    line = f.readline()
 
-    sum = 0
+    numbers = []
+    
+    while line:
 
-    one = re.findall(r'1', file)
-    two = re.findall(r'2', file)
-    three = re.findall(r'3', file)
-    four = re.findall(r'4', file)
-    five = re.findall(r'5', file)
-    six = re.findall(r'6', file)
-    seven = re.findall(r'7', file)
-    eight = re.findall(r'8', file)
-    nine = re.findall(r'9', file)
+        number_count = re.findall(r"[0-9]+", line)
 
+        numbers.extend(number_count)
 
+        line = f.readline()
+
+    
+    add = 0
+    for num in numbers:
+        add += int(num)
+
+    f.close()
+    return add
 
 def countWord(fileName, word):
     
-    fileWords = filName.split()
+    f = open(fileName, 'r')
+    line = f.readline()
 
     count = 0
+    
+    while line:
+        lowerFile = line.lower()
 
-    for x in filewords:
-        if x.upper() == word.upper():
-            count += 1
+        word_accurance = re.findall(r"\b" + word + r"\b", lowerFile)
+
+        count += len(word_accurance)
+
+        line = f.readline()
+
+    f.close()
+
+    return count
 
 
 def listURLs(fileName):
-    pass
+    
+    f = open(fileName, 'r')
+    line = f.readline()
 
+    linkList = []
+
+    while line:
+
+        link = re.findall(r"www.[a-z0-9]+.[a-z].[a-z0-9]+.", line)
+
+        linkList += link
+
+        line = f.readline()
+
+    f.close()
+
+    print(linkList)
+
+    return linkList
 
 
 class TestHW6(unittest.TestCase):
